@@ -5,7 +5,6 @@ using namespace std;
 void Merge(int* a,int s,int e) {
 	int mid = (s+e)/2;
 
-
 	int i = s;
 	int j = mid + 1;
 	int k = s;
