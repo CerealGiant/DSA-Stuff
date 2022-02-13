@@ -7,7 +7,6 @@ int steps(int s,int N) {
 		return 1;
 	}
 	
-
 	//rec case
 	int count = 0;
 	for(int i = 1;i<=s;i++) {
