@@ -16,7 +16,7 @@ int stow(char* s,int len) {
 
 int main() {
 	char a[] = {'1','2','3','4','\0'};
-	int len = strlen(a);
+	int len = strlen(a); 
 	int number = stow(a,len);
 	cout<<number<<endl;
 
