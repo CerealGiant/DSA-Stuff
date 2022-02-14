@@ -20,7 +20,7 @@ void generate_strings(char* a,int i,int j,char* out) {
 	generate_strings(a,i+1,j+1,out);
 
 	//Including next digit as well
-	if(a[i+1] != '\0') {
+	if(a[i+1] != '\0') { //Important 
 	int digit1 = a[i] - '0';
 	int digit2 = a[i+1] - '0';
 	int number =  digit1*10 + digit2;
@@ -30,6 +30,7 @@ void generate_strings(char* a,int i,int j,char* out) {
 		generate_strings(a,i+2,j+1,out);
 	}
 }
+
 }
 
 
