@@ -27,6 +27,19 @@ public:
 	void delete();
 }*/
 
+
+int length(node* head) {
+	int count = 0;
+
+	while(head != NULL) {
+		count++;
+		head = head->next;
+	}
+
+	return count;
+}
+
+
 //Using functions for functionality of linked list(Procedural programming)
 
 //Passing head by reference since we have to change what head points to(since we are inserting at head)
@@ -56,17 +69,55 @@ void insertAtTail(node*&tail,node*head,int data) {
 
 }
 
+//Deleting data at the head
+void deleteAtHead(node*&head) {
+	node* temp = head->next; //Node pointer to hold address to next element after head(new head).
+	delete head;
+	head = temp;
+}
 
-int length(node* head) {
-	int count = 0;
 
-	while(head != NULL) {
-		count++;
-		head = head->next;
+//Deleting data at the tail
+void deleteAtTail(node*&tail,node*head) {
+	
+	node*temp = head;
+
+	while(temp->next != tail) {
+		temp = temp->next;
+	}
+	//head now points to element before the tail element
+	delete tail;
+	temp->next = NULL;
+	tail = temp; //Tail is now the element before the deleted element.
+}
+
+//Deleting data in the middle
+void deleteAtMiddle(node*&head,node*&tail,int p) {
+	
+	if(p == 0) {
+		deleteAtHead(head);
+		return;
+	}else if(p >= length(head) ) {
+		deleteAtTail(tail,head);
+		return;
 	}
 
-	return count;
+	int jump = 1;
+	node* temp = head;
+	while(jump<=p-2) {
+		temp = temp->next;
+		jump++;
+	}
+
+	//temp points to element just before deleted element
+	node* temp2 = temp->next->next;
+	delete temp->next;
+	temp->next = temp2;
+	
+
 }
+
+
 
 //Passing the head by reference and taking position p
 void insertAtMiddle(node*&head,node*&tail,int data,int p) {
@@ -75,7 +126,7 @@ void insertAtMiddle(node*&head,node*&tail,int data,int p) {
 		//If there are no elements then we will use previous function to add.
 		insertAtHead(head,tail,data);
 		return;
-	}else if(p > length(head) ) {
+	}else if(p >= length(head) ) {
 		insertAtTail(tail,head,data);
 		return;
 	}
@@ -83,6 +134,7 @@ void insertAtMiddle(node*&head,node*&tail,int data,int p) {
 	int jump = 1;
 	node*temp = head;
 	while(jump<=p-1) {
+
 		temp = temp->next;
 		jump++;
 	}
@@ -90,7 +142,6 @@ void insertAtMiddle(node*&head,node*&tail,int data,int p) {
 	node* n = new node(data);
 	n->next = temp->next;
 	temp->next = n;
-
 
 }	
 
@@ -103,6 +154,7 @@ void print(node*head) {
 }
 
 void printTail(node*tail) {
+
 	if(tail != NULL) {
 		cout<<"TAIL: "<<tail->data<<endl;
 	}
@@ -117,6 +169,8 @@ int main() {
 	insertAtHead(head,tail,2);
 	insertAtHead(head,tail,1);
 	insertAtHead(head,tail,10);
+	deleteAtMiddle(head,tail,5);
+	insertAtMiddle(head,tail,100,5);
 	printTail(tail);
 	print(head);
 
