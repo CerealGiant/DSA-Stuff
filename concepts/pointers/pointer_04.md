@@ -6,7 +6,6 @@
 
 	void increment(int a) {
 		a = a + 1
-
 	}
 
 	int main() {
