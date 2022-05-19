@@ -1,6 +1,21 @@
 #include <iostream>
 using namespace std;
 
+void bubbleSortRecursive(int* a,int n, int i) {
+	//base case
+	if(i == n) {
+		return;
+	}
+	
+	//rec case
+	for(int j =0;j<n-i-1;j++) {
+		if(a[j] > a[j+1]) {
+			swap(a[j],a[j+1]);	
+		}
+	}
+	bubbleSortRecursive(a,n,i+1);
+}
+
 void bubble_sort(int* a,int n) {
 	for(int itr = 0;itr<=n-1;itr++) {
 		for(int j = 0;j<n-itr-1;j++) { //From 0 to n-number of iterations-1
@@ -38,6 +53,7 @@ void bubble_sort(int* a,int n) {
 int main() {
 	int arr[] = {6,7,3,4,2,1};
 	int n = sizeof(arr)/sizeof(n);
-	bubble_sort(arr,n);
+//	bubble_sort(arr,n);
+	bubbleSortRecursive(arr,n,0);
 	for(auto x: arr) cout<<x<<" ";
 }

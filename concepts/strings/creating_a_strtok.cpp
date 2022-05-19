@@ -10,7 +10,7 @@ char* stringTok(char* s,char delim) {
 		input  = s;
 	}
 
-	if(input == NULL) {
+	if(input == NULL) { //When the last token is extracted, we return null which can be used to check if all the tokens in the string have been extracted
 		return NULL;
 	}
 

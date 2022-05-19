@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+//Time complexity of n^3 because we are using 3 for loops
+//Two loops to act as the pointers and another to traverse between the 2 pointers and print the loop
 void generate_subarrays(int* a,int n) {
 	for(int i = 0;i<n;i++) {
 		for(int j =i;j<n;j++) {

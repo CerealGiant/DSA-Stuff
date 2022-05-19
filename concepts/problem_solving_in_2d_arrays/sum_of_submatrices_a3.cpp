@@ -9,11 +9,13 @@ int subarray_sum(int a[][10],int m,int n) {
 
 	//For top left, numbers less than or equal to i and j will be included starting from 0,0
 	//For bottom right, numbers more than or equal to i and j will be included ending at m and n.
+	//For i,j to be top left, numbers have to be greater than or equal to i and j (right side of i,j)
+	//For i,j to be top right, numbers have to be less than or equal to i and j (left side of i,j)
 	int sum = 0;
 	for(int i = 0;i<m;i++) {
 		for(int j =0;j<n;j++) {
 			int x = (j+1) * (i+1);
-			int y = (m - i) * (n - j);
+			int y = (m - i) * (n - j); //Starting from i,j to m-1 to n-1
 			sum+=a[i][j]*(x*y);
 		}	
 	}

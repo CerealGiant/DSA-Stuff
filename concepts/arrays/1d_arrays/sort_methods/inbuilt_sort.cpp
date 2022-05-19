@@ -10,7 +10,7 @@ bool compare(int a,int b) {
 int main() {
 	int a[] = {1,5,4,2,8,10};
 	int n = sizeof(a)/sizeof(int);
-	sort(a,a+n); //Inbuit STL Sort
+	sort(a,a+n); //Inbuit STL Sort -> we need to provide the starting pointer and the end
 	for(auto x: a) cout<<x<<" ";
 	cout<<endl;
 	//If you want it in decreasing order you need to write a compartor function and add it in sort

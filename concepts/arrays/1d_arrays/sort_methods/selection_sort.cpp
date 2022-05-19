@@ -22,6 +22,11 @@ void selectionSort_recursive(int* a,int i,int N) {
 
 }
 
+//How does selection sort work?
+//We take the current index to be the minimum value
+//Then starting from the current index to the end of the array we will look for the smallest value
+//If there is a value lesser than current index, we will save it in the min_index variable
+//Then we swap the 2 values
 
 int selectionSort(int* a,int n) {
 	for(int i = 0;i<n-1;i++) { //No need to do last digit since last digit means digit is sorted
