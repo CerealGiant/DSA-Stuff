@@ -1,8 +1,6 @@
 # Pointers 04
 
-# Passing by reference using pointers
-
-- Generally in functions, we pass by value
+# Passing by value
 
 	void increment(int a) {
 		a = a + 1
@@ -11,7 +9,6 @@
 	int main() {
 		int a = 10;
 		increment(a)
-	
 	}
 
 - In the above case, when you print the value of a inside increment, it is 11 but in the main function it is still 10
