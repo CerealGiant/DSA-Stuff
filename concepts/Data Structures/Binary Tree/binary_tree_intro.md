@@ -1,3 +1,3 @@
 # Binary Tree Intro
 
-![Binary Tree Example] (binary-tree.png)
+! [Binary Tree Example] (binary-tree.png)
