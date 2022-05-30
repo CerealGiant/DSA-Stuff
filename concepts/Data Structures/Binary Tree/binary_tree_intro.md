@@ -1,4 +1,5 @@
 # Binary Tree Intro
 
-![](images/binary-tree.png)\s\s   
+![](images/binary-tree.png)  
+
 *An example of a Binary Tree*
