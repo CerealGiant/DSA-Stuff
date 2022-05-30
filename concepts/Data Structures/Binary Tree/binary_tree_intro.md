@@ -34,7 +34,7 @@
 
 ## Binary Tree Traversal
 
-![Binary Tree Sample](images/binary-tree-sample)
+![Binary Tree Sample](images/binary-tree-sample.png)
 
 *Binary Tree we will traverse*
 
