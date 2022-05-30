@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
-//3 4 -1 6 -1 -1 5 1 -1 -1 -1
+//3 4 -1 6 5 -1 -1
 class node {
-public:
+	public:
 	int data;
-	node* left;
-	node* right;
-
+	node*left;
+	node*right;
+	
 	node(int d) {
 		data = d;
 		left = NULL;
@@ -21,27 +21,27 @@ node* buildTree() {
 
 	//base case
 	if(d == -1) {
-		return NULL;
+		return NULL;	
 	}
 
-	//rec case
 	node* root = new node(d);
 	root->left = buildTree();
 	root->right = buildTree();
-
 	return root;
-} 
+}
 
-void printPreOrder(node* root) {
+
+void print(node* root) {
 	if(root == NULL) {
 		return;
 	}
 	cout<<root->data<<" ";
-	printPreOrder(root->left);
-	printPreOrder(root->right);
+	print(root->left);
+	print(root->right);
 }
 
 int main() {
 	node* root = buildTree();
-	printPreOrder(root);
+	print(root);
+
 }

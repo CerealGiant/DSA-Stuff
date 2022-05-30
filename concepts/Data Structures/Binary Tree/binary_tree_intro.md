@@ -17,3 +17,33 @@
 - Taking node 4, we can see nodes 2 and 1 are its **ancestor** nodes. Similarly, 4 is the **descendant** of 2 and 1.
 
 - Node 3 is an example of a **leaf node** which refers to a node with no children.
+
+## Different ways to traverse a Binary Tree
+
+### PreOrder
+
+- We traverse the root first, then followed by the left subtree and then the right subtree.
+
+### InOrder
+
+- We traverse the left first, then followed by the root and then the right subtree.
+
+### PostOrder
+
+- We traverse the left first, followed by the right subtree and then the root.
+
+## Binary Tree Traversal
+
+![Binary Tree Sample](images/binary-tree-sample)
+
+*Binary Tree we will traverse*
+
+- **PreOrder Traversal Order:** 
+  -  8 -> 10 -> 1 -> 9 -> 7 -> 6 -> 3 -> 13 -> 14
+
+- **InOrder Traversal Order:**
+  -  1 -> 10 -> 9 -> 6 -> 7 -> 8 -> 3 -> 13 -> 14
+
+- **PostOrder Traversal Order:**(Bottom Up Style)
+  - 1 -> 9 -> 7 -> 6 -> 10 -> 13 -> 14 -> 3
+
