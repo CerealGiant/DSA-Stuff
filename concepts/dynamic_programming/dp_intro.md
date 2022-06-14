@@ -1,6 +1,6 @@
 # Introduction to Dynamic Programming
 
-			"Those who cant remember their past are condemned to repeat it"
+						"Those who cant remember their past are condemned to repeat it"
 
 
 
